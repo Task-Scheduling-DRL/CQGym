@@ -91,6 +91,7 @@ class Cqsim_sim(Pause, Thread):
         #while (i < len(self.module['job'].job_info())):
         while (i < self.module['job'].job_info_len()):
             self.insert_event(1,self.module['job'].job_info(i)['submit'],2,[1,i])
+            # self.insert_event(1, self.module['job'].job_info(i), 2, [1, i])
             self.previous_read_job_time = self.module['job'].job_info(i)['submit']
             self.debug.debug("  "+"Insert job["+"2"+"] "+str(self.module['job'].job_info(i)['submit']),4)
             i += 1

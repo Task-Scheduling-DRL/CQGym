@@ -121,7 +121,7 @@ class Job_trace:
                 self.i += 1      
             self.j += 1
             temp_n += 1
-        #    return 0
+        # return 0
     
     def import_job_file (self, job_file):
         #self.debug.debug("* "+self.myInfo+" -- import_job_file",5)
@@ -250,11 +250,17 @@ class Job_trace:
         elif (v1 > v2):
             return 1
 
+    # def job_info (self, job_index = -1):
+    #     #self.debug.debug("* "+self.myInfo+" -- job_info",6)
+    #     if job_index == -1:
+    #         return self.jobTrace
+    #     return self.jobTrace[job_index]
+    
     def job_info (self, job_index = -1):
-        #self.debug.debug("* "+self.myInfo+" -- job_info",6)
         if job_index == -1:
             return self.jobTrace
-        return self.jobTrace[job_index]
+        return self.jobTrace.get(job_index, 0)
+    
 
     def job_info_len(self):
         return len(self.jobTrace)+self.num_delete_jobs

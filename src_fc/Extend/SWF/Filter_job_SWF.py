@@ -26,6 +26,7 @@ class Filter_job_SWF(filter_job.Filter_job):
 
         nr_sign = ';'    # Not read sign. Mark the line not the job data
         sept_sign = ' '   # The sign seperate data in a line
+        # sept_sign = '\t'   # The sign seperate data in a line
         
         jobFile = open(self.trace, 'r')
         min_sub = -1

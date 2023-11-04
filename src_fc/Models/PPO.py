@@ -117,7 +117,7 @@ class PPO():
             R = r + self.gamma * R
             Gt.insert(0, R)
         Gt = torch.tensor(Gt, dtype=torch.float)
-        self.states = torch.tensor(self.states, dtype=torch.float)
+        self.states = torch.tensor(np.array(self.states), dtype=torch.float)
 
         for i in range(self.ppo_update_time):
             for index in BatchSampler(SubsetRandomSampler(range(len(self.states))), 1, False):
